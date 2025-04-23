@@ -4,7 +4,7 @@ import { Sound } from 'expo-av/build/Audio/Sound';
 import { EventSubscription } from 'expo-modules-core';
 import { Accelerometer } from 'expo-sensors';
 import { Vibration } from 'react-native';
-import { loadReadingState, saveReadingState } from '../storagepreferences/LocalStorage';
+import { clearReadingState, loadReadingState, saveReadingState } from '../storagepreferences/LocalStorage';
 
 type State = {
     texto: string;
@@ -233,7 +233,3 @@ export const ReadingProvider: React.FC<{ children: React.ReactNode }> = ({ child
 };
 
 export const useReading = () => useContext(ReadingContext);
-
-function clearReadingState() {
-    throw new Error('Function not implemented.');
-}
